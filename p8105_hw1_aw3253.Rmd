@@ -18,8 +18,9 @@ plot_df <- data.frame(
   
   y = rnorm(x, mean = 0, sd = 1),
   
-  z =  c("FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "TRUE", "TRUE", "TRUE", "TRUE", "TRUE")
+  z =  c("FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "TRUE", "TRUE", "TRUE", "TRUE", "TRUE"),
   
+  p = c("D", "A", "T", "A", "S", "C", "I", "E", "N", "C")
   
 )
 
