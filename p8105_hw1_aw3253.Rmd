@@ -8,11 +8,22 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
-library(tidyverse)
+# Problem 1
 
-plot_df = tibble(
-  x = rnorm(10, mean = 0, sd = 1))
+
+```{r}
+
+plot_df <- data.frame(
+  x <- c(-5, -4, -3, -2, -1, 0.5, 1, 2, 3, 4),
+  
+  y = rnorm(x, mean = 0, sd = 1),
+  
+  z =  c("FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "TRUE", "TRUE", "TRUE", "TRUE", "TRUE")
+  
+  
+)
+
+plot_df
 
 ```
 
