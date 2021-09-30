@@ -20,11 +20,14 @@ plot_df <- data.frame(
   
   z =  c("FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "TRUE", "TRUE", "TRUE", "TRUE", "TRUE"),
   
-  p = c("D", "A", "T", "A", "S", "C", "I", "E", "N", "C")
+  p = c("D", "A", "T", "A", "S", "C", "I", "E", "N", "C"),
+  
+  bmi <- factor(c("underweight", "overweight", "obese", "obese", "obese", "underweight", "underweight", "obese", "underweight", "underweight"))
   
 )
 
 plot_df
+levels(bmi)
 
 ```
 
