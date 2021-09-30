@@ -4,42 +4,29 @@ author: Alyssa W.
 output: github_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 # Problem 1
 
-
-```{r}
-
-plot_df <- data.frame(
-  x <- c(-5, -4, -3, -2, -1, 0.5, 1, 2, 3, 4),
-  
-  y = rnorm(x, mean = 0, sd = 1),
-  
-  z =  c("FALSE", "FALSE", "FALSE", "FALSE", "FALSE", "TRUE", "TRUE", "TRUE", "TRUE", "TRUE"),
-  
-  p = c("D", "A", "T", "A", "S", "C", "I", "E", "N", "C"),
-  
-  bmi <- factor(c("underweight", "overweight", "obese", "obese", "obese", "underweight", "underweight", "obese", "underweight", "underweight"))
-  
-)
-
-plot_df
-levels(bmi)
-
-```
-
-
-
-### Finding the mean
 ```{r}
 library(tidyverse)
 
-pull(plot_df, x)
+plot_df = tibble(
+  vec_numeric = rnorm(10),
+  vec_char = c("D", "A", "T", "A", "S", "C", "I", "E", "N", "C"),
+  vec_logical = c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, FALSE),
+  vec_factor = factor(c("underweight", "overweight", "obese", "obese", "obese", "underweight", "underweight", "obese", "underweight", "underweight"))
+)
 
-mean(x)
+```
+
+### Finding the mean
+
+```{r}
+library(tidyverse)
+mean(pull(plot_df, var = vec_numeric))
+mean(pull(plot_df, var = vec_char))
+mean(pull(plot_df, var = vec_logical))
+mean(pull(plot_df, var = vec_factor))
 
 ```
 
@@ -50,9 +37,17 @@ install.packages("palmerpenguins")
 
 ```
 
-```{r, echo=FALSE}
+
+```{r}
 data("penguins", package = "palmerpenguins")
 
 ```
 
 This data has The data frame has `r nrow(penguins)` rows and `r ncol(penguins)`. The mean flipper length is `r mean(penguins)`.
+
+
+### Scatterplot 
+```{r}
+new = ggplot(penguins, aes(x = bill_length_mm, y=flipper_length_mm)) + geom_point()
+
+```
