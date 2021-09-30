@@ -32,22 +32,17 @@ mean(pull(plot_df, var = vec_factor))
 
 
 # Problem 2
-```{r, echo=FALSE}
-install.packages("palmerpenguins")
-
-```
-
-
 ```{r}
 data("penguins", package = "palmerpenguins")
-
 ```
+
 
 This data has The data frame has `r nrow(penguins)` rows and `r ncol(penguins)`. The mean flipper length is `r mean(penguins)`.
 
 
 ### Scatterplot 
 ```{r}
-new = ggplot(penguins, aes(x = bill_length_mm, y=flipper_length_mm)) + geom_point()
+new <- ggplot(penguins, aes(x = bill_length_mm, y=flipper_length_mm)) + geom_point()
 
+new
 ```
